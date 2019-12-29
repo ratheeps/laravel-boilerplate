@@ -14,7 +14,7 @@
                             <div class="col-md-12">
                                 <div class="float-right mt-3">
                                     <a href="{{ route('users.list') }}" class="btn btn-dark">Cancel</a>
-                                    <button type="submit" class="btn btn-success">Create</button>
+                                    <button type="submit" class="btn btn-success">Update</button>
                                 </div>
                             </div>
                         </div>

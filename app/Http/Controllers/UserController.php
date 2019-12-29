@@ -43,9 +43,10 @@ class UserController extends Controller
         return redirect()->route('users.list');
     }
 
-    public function show()
+    public function show($modelId)
     {
-
+        $user = $this->user->find($modelId);
+        return view('admin.users.view', compact('user'));
     }
 
     public function edit($modelId)
