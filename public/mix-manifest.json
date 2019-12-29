@@ -2,5 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/vendor/table.js": "/js/vendor/table.js",
-    "/css/vendor/table.css": "/css/vendor/table.css"
+    "/css/vendor/table.css": "/css/vendor/table.css",
+    "/js/vendor/sweetalert2.js": "/js/vendor/sweetalert2.js",
+    "/css/vendor/sweetalert2.css": "/css/vendor/sweetalert2.css"
 }

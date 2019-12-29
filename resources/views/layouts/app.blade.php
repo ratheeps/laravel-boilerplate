@@ -11,6 +11,7 @@
             @yield('content')
         </main>
     </div>
+    @include('sweetalert::alert')
     @include('layouts._script')
 </body>
 </html>
