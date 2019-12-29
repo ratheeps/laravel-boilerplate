@@ -1,0 +1,18 @@
+.code {
+    padding: 3px 5px;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 2px;
+}
+
+.code.variable {
+    background: #21ba45;
+}
+
+.code.link {
+    background: #2185d0;
+}
+
+.code.loop {
+    background: #db2828;
+}
