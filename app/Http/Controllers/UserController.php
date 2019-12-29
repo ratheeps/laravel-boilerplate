@@ -18,4 +18,22 @@ class UserController extends Controller
     {
         $this->user = $user;
     }
+
+    public function index()
+    {
+        if (\request()->ajax()){
+            return $this->user->dataTableList();
+        }
+        return view('admin.users.list');
+    }
+
+    public function show()
+    {
+
+    }
+
+    public function edit()
+    {
+
+    }
 }

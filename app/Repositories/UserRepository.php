@@ -12,4 +12,21 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
     {
         $this->setModel($user);
     }
+
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
+    public function dataTableList()
+    {
+        return datatables()->of($this->model->query())
+            ->addColumn('action', function ($row) {
+                $btn = '<a href="' . route('users.show', $row->id) . '" class="edit btn btn-primary btn-sm mr-1">View</a>';
+                $btn .= '<a href="' . route('users.edit', $row->id) . '" class="edit btn btn-info btn-sm mr-1">Edit</a>';
+                $btn .= '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm">Delete</a>';
+                return $btn;
+            })
+            ->rawColumns(['action'])
+            ->toJson();
+    }
 }

@@ -7,3 +7,4 @@
 <link rel="stylesheet" href="{{ asset('css/vendor/sweetalert2.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/ckeditor/styles.js') }}">
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+@yield('style')

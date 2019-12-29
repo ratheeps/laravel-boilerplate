@@ -20,6 +20,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('users')->group(function () {
         Route::get('/', 'UserController@index')->name('users.list');
+        Route::prefix('{modelId}')->group(function () {
+            Route::get('/', 'UserController@show')->name('users.show');
+            Route::get('/edit', 'UserController@edit')->name('users.edit');
+        });
     });
 });
 
