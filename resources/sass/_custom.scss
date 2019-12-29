@@ -1,0 +1,8 @@
+.required:after {
+    content: " *";
+    color: red;
+}
+
+.invalid-feedback{
+    display: inline-block !important;
+}

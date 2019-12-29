@@ -11,7 +11,7 @@
                                 <h3 class="card-title">Users</h3>
                             </div>
                             <div class="float-right">
-                                <a href="" class="btn btn-sm btn-success">Create</a>
+                                <a href="{{ route('users.create') }}" class="btn btn-sm btn-success">Create</a>
                             </div>
                         </div>
                         <hr class="mb-4 mt-1">
