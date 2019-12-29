@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'WebController@index')->name('web.home');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+    Route::prefix('users')->group(function () {
+        Route::get('/', 'UserController@index')->name('users.list');
+    });
+});
+
