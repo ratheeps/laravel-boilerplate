@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'UserController@show')->name('users.show');
             Route::get('/edit', 'UserController@edit')->name('users.edit');
             Route::patch('/', 'UserController@update')->name('users.update');
+            Route::delete('/', 'UserController@delete')->name('users.delete');
         });
     });
 });

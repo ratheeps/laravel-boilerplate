@@ -23,7 +23,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
             ->addColumn('action', function ($row) {
                 $btn = '<a href="' . route('users.show', $row->id) . '" class="edit btn btn-primary btn-sm mr-1">View</a>';
                 $btn .= '<a href="' . route('users.edit', $row->id) . '" class="edit btn btn-info btn-sm mr-1">Edit</a>';
-                $btn .= '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm">Delete</a>';
+                $btn .= '<a href="javascript:void(0)" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm delete-btn">Delete</a>';
                 return $btn;
             })
             ->rawColumns(['action'])

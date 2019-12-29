@@ -63,7 +63,7 @@ class BaseRepository implements Repository
      */
     public function delete($id)
     {
-        return $this->model->delete($id);
+        return $this->model->find($id)->delete();
     }
 
     /**

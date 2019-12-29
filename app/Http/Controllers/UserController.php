@@ -67,4 +67,10 @@ class UserController extends Controller
         toast('User has been updated!','success');
         return redirect()->route('users.list');
     }
+
+    public function delete($modelId){
+        return response()->json([
+            'success' => $this->user->delete($modelId)
+        ]);
+    }
 }

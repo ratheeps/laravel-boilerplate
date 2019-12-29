@@ -53,6 +53,48 @@
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
+
+            $(document).on('click', '.delete-btn', function () {
+                var id = $(this).data('id');
+                var deleteUrl = '{{ route('users.delete', [ 'modelId'=>'ID']) }}';
+                deleteUrl = deleteUrl.replace('ID', id);
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this action!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#DB2828',
+                    confirmButtonText: 'Yes, Delete!'
+                }).then(function (isConfirm) {
+                    if (isConfirm.value) {
+                        $.ajax({
+                            url: deleteUrl,
+                            type: 'DELETE',
+                            data: {'_token': '{{ csrf_token() }}'},
+                            success: function (result) {
+                                var type = result.success ? 'success' : 'warning';
+                                var title = result.success ? 'User has been deleted!' : 'Unable to delete!';
+                                Swal.fire({
+                                    "title": title,
+                                    "text": "",
+                                    "timer": 5000,
+                                    "width": "32rem",
+                                    "heightAuto": true,
+                                    "padding": "1.25rem",
+                                    "showConfirmButton": false,
+                                    "showCloseButton": true,
+                                    "toast": true,
+                                    "icon": type,
+                                    "position": "bottom-end"
+                                });
+                                if (type === 'success') {
+                                    table.ajax.reload();
+                                }
+                            }
+                        });
+                    }
+                });
+            });
         });
     </script>
 @endsection
